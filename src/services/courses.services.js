@@ -24,7 +24,7 @@ class CoursesService {
 
             const result = await Courses.findAll({
 
-                attributes: ["title", "description", "instructor"],
+                attributes: ["id","title", "description", "instructor"],
 
                 include: [
                     {
@@ -35,7 +35,7 @@ class CoursesService {
                     {
                         model: Videos,
                         as: "videos",
-                        attributes: ["title", "url"]
+                        attributes: [ "title", "url"]
                     }
                 ]
             });

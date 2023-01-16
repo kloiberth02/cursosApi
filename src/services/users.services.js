@@ -9,7 +9,7 @@ class UsersService {
     try {
 
       const result = await Users.findByPk(id, {
-        attributes: ["firstName", "lastName", "email"],
+        attributes: ["id", "firstName", "lastName", "email"],
 
       });
 
@@ -26,7 +26,7 @@ class UsersService {
 
       const result = await Users.findOne({
         where: { id },
-        attributes: ["firstName", "lastName", "email"],
+        attributes: ["id", "firstName", "lastName", "email"],
         include: {
           model: UsersCourses,
           as: "courses",
